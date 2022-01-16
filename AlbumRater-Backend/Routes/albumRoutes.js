@@ -2,7 +2,7 @@ const express = require('express')
 
 // add Comment router 
 const albumRouter = express.Router()
-const albumController = require('../controllers/albumController')
+const albumController = require('../Controllers/albumControllers')
 
 //CREATE ----------------------------------------------------------
 

@@ -2,7 +2,7 @@ const express = require('express')
 
 // add Comment router 
 const songRouter = express.Router()
-const songController = require('../controllers/songController')
+const songController = require('../Controllers/songControllers')
 
 //CREATE ----------------------------------------------------------
 

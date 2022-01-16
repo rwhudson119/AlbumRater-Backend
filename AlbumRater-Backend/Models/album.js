@@ -6,6 +6,10 @@ const albumSchema = new mongoose.Schema({
         type: String,
 		required: true,
 	},
+	profile: {
+        type: String,
+		required: true,
+	},
 	artist: {
         type: String,
 		required: true,
@@ -43,8 +47,8 @@ const albumSchema = new mongoose.Schema({
 	songs: {
         type: [String],
 	}
-})
+});
 
-const Album = mongoose.model("Album", albumSchema)
+const Album = mongoose.model('Album', albumSchema)
 
 module.exports = Album 

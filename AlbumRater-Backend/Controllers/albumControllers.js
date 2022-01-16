@@ -32,6 +32,7 @@ const getOneAlbum = async (req, res) => {
 //add Album to the database
 const addAlbum = (req, res) => {
     const title = req.body.title
+    const profile = req.body.profile
     const artist = req.body.artist
     const genre = req.body.genre
     const release_date = req.body.release_date
@@ -47,6 +48,7 @@ const addAlbum = (req, res) => {
 
     const newAlbum = new Album({
     title,
+    profile,
     artist,
     genre,
     release_date,
@@ -67,7 +69,7 @@ const addAlbum = (req, res) => {
 }
 
 module.exports = {
-    getAllRatings,
-    getOneRating,
-    addRating
+    getAllAlbums,
+    getOneAlbum,
+    addAlbum
 }

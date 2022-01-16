@@ -9,7 +9,7 @@ CONNECTION_STRING.replace("<username>",process.env.MONGO_USERNAME).replace("<pas
 mongoose.connect(MONGO_URL || "mongodb://localhost", {
  useNewUrlParser: true,
  useUnifiedTopology: true,
- dbName: "IT-Project-Database"
+ dbName: "personal-albumrater"
 })
 
 
@@ -22,3 +22,8 @@ db.on("error", err => {
 db.once("open", async () => {
 	console.log("Mongo connection started on " + db.host + ":" + db.port);
 })
+
+require('./album');
+require('./profile');
+require('./song');
+require('./rating');

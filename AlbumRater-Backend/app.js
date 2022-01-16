@@ -6,13 +6,13 @@ const methodOverride = require('method-override');
 app.use(bodyParser.json());
 app.use(cors());
 app.use(methodOverride('_method'));
+var path = require("path");
 require('./Models');
 
-
-const albumRouter = require('./Routes/albumRoutes.js');
 const profileRouter = require('./Routes/profileRoutes');
-const ratingRouter = require('./Routes/ratingRoutes');
 const songRouter = require('./Routes/songRoutes');
+const albumRouter = require('./Routes/albumRoutes');
+const ratingRouter = require('./Routes/ratingRoutes');
 
 
 // handler for clients
