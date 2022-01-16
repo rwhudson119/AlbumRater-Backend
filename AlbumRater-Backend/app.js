@@ -7,10 +7,9 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(methodOverride('_method'));
 require('./Models');
-require('./Routes');
 
 
-const albumRouter = require('./Routes/albumRoutes');
+const albumRouter = require('./Routes/albumRoutes.js');
 const profileRouter = require('./Routes/profileRoutes');
 const ratingRouter = require('./Routes/ratingRoutes');
 const songRouter = require('./Routes/songRoutes');
