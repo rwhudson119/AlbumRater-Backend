@@ -2,10 +2,6 @@ const mongoose = require("mongoose")
 
 const albumSchema = new mongoose.Schema({
 
-    albumID: {
-        type: String,
-		required: true,
-	},
     title: {
         type: String,
 		required: true,
@@ -41,7 +37,7 @@ const albumSchema = new mongoose.Schema({
 	notes: {
         type: String,
 	},
-    rankID: {
+    ratings: {
         type: [String],
 	},
 	songs: {

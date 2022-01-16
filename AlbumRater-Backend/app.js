@@ -6,13 +6,21 @@ const methodOverride = require('method-override');
 app.use(bodyParser.json());
 app.use(cors());
 app.use(methodOverride('_method'));
-require('./models');
+require('./Models');
+require('./Routes');
 
 
-//const contactRouter = require('./routes/contactRouter');
+const albumRouter = require('./Routes/albumRoutes');
+const profileRouter = require('./Routes/profileRoutes');
+const ratingRouter = require('./Routes/ratingRoutes');
+const songRouter = require('./Routes/songRoutes');
+
 
 // handler for clients
-//app.use('/contacts', contactRouter);
+app.use('/album', albumRouter);
+app.use('/profile', profileRouter);
+app.use('/rating', ratingRouter);
+app.use('/song', songRouter);
 
 app.get('/', (req, res) =>{
 	res.send('<h1>Website</h1>');
