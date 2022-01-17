@@ -12,7 +12,10 @@ albumRouter.post('/add', albumController.addAlbum);
 
 albumRouter.get('/', albumController.getAllAlbums);
 
-albumRouter.get('/:albumId', albumController.getOneAlbum);
+albumRouter.get('/oneAlbum/:albumId', albumController.getOneAlbum);
+
+albumRouter.get('/:profile', albumController.getProfilesAlbums);
+
 
 
 //UPDATE ----------------------------------------------------------
