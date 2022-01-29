@@ -28,22 +28,35 @@ const getOneSong = async (req, res) => {
        return res.send("Database query failed")
     }
 }
+
+const deleteAllSongs = async (req, res) => {
+    try {
+        const oneSong = await Song.deleteMany({})
+        return res.send("Songs Deleted") // Songs deleted
+    } 
+    catch (err) { // error occurred
+       res.status(400)
+       return res.send("Database query failed")
+    }
+}
    
    //add Song to the database
    const addSong = (req, res) => {
+       const id = req.body.id
        const title = req.body.title
        const artist = req.body.artist
        const score = req.body.score
        
    
        const newSong = new Song({
+        id,
         title,
         artist,
         score,
        });
    
        newSong.save()
-           .then(() => res.json('Song added!'))
+           .then(() => res.json(id))
            .catch (err => res.status(400).json(`Error: ${err}`));
    }
    
@@ -52,5 +65,6 @@ const getOneSong = async (req, res) => {
 module.exports = {
     getAllSongs,
     getOneSong,
-    addSong
+    addSong,
+    deleteAllSongs
 }

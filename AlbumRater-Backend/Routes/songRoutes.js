@@ -21,7 +21,7 @@ songRouter.get('/:songId', songController.getOneSong);
 
 //DELETE ----------------------------------------------------------
 
-
+songRouter.delete('/deleteAll', songController.deleteAllSongs);
 
 // export the router
 module.exports = songRouter

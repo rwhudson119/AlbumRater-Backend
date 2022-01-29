@@ -11,7 +11,6 @@ const ratingSchema = new mongoose.Schema({
 	},
 	notes: {
         type: String,
-		required: true,
 	}
 
 })
