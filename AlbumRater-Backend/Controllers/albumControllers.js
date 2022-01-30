@@ -15,7 +15,8 @@ const getAllAlbums = async (req, res) => {
    // find one Album by their id
 const getOneAlbum = async (req, res) => {
     try {
-        const oneAlbum = await Album.findOne( {"albumId": req.params.id})
+        console.log(req.params.albumId)
+        const oneAlbum = await Album.findOne( {"_id": req.params.albumId})
         if (oneAlbum === null) { 
             // no Album found in database
             res.status(404)
@@ -39,6 +40,28 @@ const getProfilesAlbums = async (req, res) => {
         console.log("failed " + req.params.profile);
         return res.send("Database query failed")
     }
+}
+
+const updateAlbum = async (req, res) => {
+    try {
+       //const oneAlbum = await Album.find( {"albumId": req.params.albumId } );
+       const update = {
+            originality: req.body.originality,
+            flow: req.body.flow,
+            lyrics: req.body.lyrics,
+            how_captivating: req.body.how_captivating,
+            timelessness: req.body.timelessness,
+            ratings: req.body.ratings,
+            notes: req.body.ratings
+       }
+   await Album.findByIdAndUpdate(req.params.albumId, update)
+   return res.send("Updated Album") // Album was found and updated 
+   } 
+   catch (err) { // error occurred
+       console.log(err)
+       res.status(400)
+       return res.send("Database query faileddd")
+   }
 }
    
 //add Album to the database
@@ -84,5 +107,6 @@ module.exports = {
     getAllAlbums,
     getOneAlbum,
     addAlbum,
-    getProfilesAlbums
+    getProfilesAlbums,
+    updateAlbum
 }

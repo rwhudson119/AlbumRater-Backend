@@ -20,7 +20,7 @@ albumRouter.get('/:profile', albumController.getProfilesAlbums);
 
 //UPDATE ----------------------------------------------------------
 
-
+albumRouter.post('/update/:albumId', albumController.updateAlbum);
 
 //DELETE ----------------------------------------------------------
 
