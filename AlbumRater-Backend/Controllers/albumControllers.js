@@ -46,13 +46,17 @@ const updateAlbum = async (req, res) => {
     try {
        //const oneAlbum = await Album.find( {"albumId": req.params.albumId } );
        const update = {
+            title: req.body.title,
+            artist: req.body.artist,
+            genre: req.body.genre,
+            release_date: req.body.release_date,
             originality: req.body.originality,
             flow: req.body.flow,
             lyrics: req.body.lyrics,
             how_captivating: req.body.how_captivating,
             timelessness: req.body.timelessness,
             ratings: req.body.ratings,
-            notes: req.body.ratings
+            notes: req.body.notes
        }
    await Album.findByIdAndUpdate(req.params.albumId, update)
    return res.send("Updated Album") // Album was found and updated 
