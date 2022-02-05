@@ -17,6 +17,7 @@ songRouter.get('/:songId', songController.getOneSong);
 
 //UPDATE ----------------------------------------------------------
 
+songRouter.post('/update/:songId', songController.updateSong);
 
 
 //DELETE ----------------------------------------------------------

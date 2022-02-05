@@ -39,6 +39,21 @@ const deleteAllSongs = async (req, res) => {
        return res.send("Database query failed")
     }
 }
+
+const updateSong = async (req, res) => {
+    try {
+       const update = {
+            score: req.body.score
+       }
+   await Song.findByIdAndUpdate(req.params.songId, update)
+   return res.send("Updated Song") // Song was found and updated 
+   } 
+   catch (err) { // error occurred
+       console.log(err)
+       res.status(400)
+       return res.send("Database query failed")
+   }
+}
    
    //add Song to the database
    const addSong = (req, res) => {
@@ -66,5 +81,6 @@ module.exports = {
     getAllSongs,
     getOneSong,
     addSong,
-    deleteAllSongs
+    deleteAllSongs,
+    updateSong
 }
