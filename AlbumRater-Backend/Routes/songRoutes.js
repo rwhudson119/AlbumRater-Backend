@@ -14,6 +14,9 @@ songRouter.get('/', songController.getAllSongs);
 
 songRouter.get('/:songId', songController.getOneSong);
 
+songRouter.get('/profile/:profile', songController.getProfilesSongs);
+
+
 
 //UPDATE ----------------------------------------------------------
 

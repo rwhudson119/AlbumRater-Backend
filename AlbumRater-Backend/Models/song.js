@@ -15,6 +15,9 @@ const songSchema = new mongoose.Schema({
 	},
 	score: {
         type: Number,
+	},
+	profile: {
+		type: String,
 	}
 })
 

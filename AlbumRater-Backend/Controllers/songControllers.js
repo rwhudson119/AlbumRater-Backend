@@ -12,10 +12,26 @@ const getAllSongs = async (req, res) => {
         return res.send("Database query failed")
     }
 }
+
+
+const getProfilesSongs = async (req, res) => {
+    try {
+        const songs = await Song.find( {"profile": req.params.profile } )
+        console.log("Getting all Songs");
+        return res.send(songs)
+    } catch (err) {
+        res.status(404)
+        console.log("failed " + req.params.profile);
+        return res.send("Database query failed")
+    }
+}
+
+
+
    // find one Song by their id
 const getOneSong = async (req, res) => {
     try {
-        const oneSong = await Song.findOne( {"id": req.params.songId})
+        const oneSong = await Song.findOne( {"_id": req.params.songId})
         if (oneSong === null) { 
         // no Song found in database
         res.status(404)
@@ -61,6 +77,8 @@ const updateSong = async (req, res) => {
        const title = req.body.title
        const artist = req.body.artist
        const score = req.body.score
+       const profile = req.body.profile
+
        
    
        const newSong = new Song({
@@ -68,6 +86,7 @@ const updateSong = async (req, res) => {
         title,
         artist,
         score,
+        profile,
        });
    
        newSong.save()
@@ -82,5 +101,6 @@ module.exports = {
     getOneSong,
     addSong,
     deleteAllSongs,
-    updateSong
+    updateSong,
+    getProfilesSongs
 }
