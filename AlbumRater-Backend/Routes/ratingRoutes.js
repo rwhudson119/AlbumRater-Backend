@@ -12,6 +12,8 @@ ratingRouter.post('/add', ratingController.addRating);
 
 ratingRouter.get('/', ratingController.getAllRatings);
 
+ratingRouter.get('/date/:date', ratingController.getOneRatingFromDate);
+
 ratingRouter.get('/:ratingId', ratingController.getOneRating);
 
 

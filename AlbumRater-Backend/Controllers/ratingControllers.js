@@ -13,7 +13,7 @@ const getAllRatings = async (req, res) => {
     }
 }
    // find one Rating by their id
-   const getOneRating = async (req, res) => {
+const getOneRating = async (req, res) => {
     try {
         const oneRating = await Rating.findOne( {"ratingId": req.params.id})
         if (oneRating === null) { 
@@ -21,6 +21,29 @@ const getAllRatings = async (req, res) => {
             res.status(404)
             return res.send("Rating not found")
         }
+        console.log("test2")
+
+        return res.send(oneRating) // Rating was found
+    } 
+    catch (err) { // error occurred
+        res.status(400)
+        return res.send("Database query failed")
+    }
+}
+
+const getOneRatingFromDate = async (req, res) => {
+    try {
+        const oneRating = await Rating.findOne( {"date": req.params.date})
+        if (oneRating === null) { 
+            // no Rating found in database
+            console.log(req.params.date)
+            console.log("test date")
+
+            res.status(404)
+            return res.send("Rating not found")
+        }
+        console.log(req.params)
+        console.log("test")
         return res.send(oneRating) // Rating was found
     } 
     catch (err) { // error occurred
@@ -49,5 +72,6 @@ const addRating = (req, res) => {
 module.exports = {
     getAllRatings,
     getOneRating,
-    addRating
+    addRating,
+    getOneRatingFromDate
 }
