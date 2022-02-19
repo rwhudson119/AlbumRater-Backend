@@ -12,6 +12,21 @@ const getAllRatings = async (req, res) => {
         return res.send("Database query failed")
     }
 }
+
+const getProfilesRatings = async (req, res) => {
+    try {
+        const ratings = await Rating.find( {"profile": req.params.profile } )
+        console.log("Getting all Ratings");
+        return res.send(ratings)
+    } catch (err) {
+        res.status(404)
+        console.log("failed " + req.params.profile);
+        return res.send("Database query failed")
+    }
+}
+
+
+
    // find one Rating by their id
 const getOneRating = async (req, res) => {
     try {
@@ -73,5 +88,6 @@ module.exports = {
     getAllRatings,
     getOneRating,
     addRating,
-    getOneRatingFromDate
+    getOneRatingFromDate,
+    getProfilesRatings
 }
