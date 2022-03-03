@@ -16,6 +16,8 @@ ratingRouter.get('/date/:date', ratingController.getOneRatingFromDate);
 
 ratingRouter.get('/:ratingId', ratingController.getOneRating);
 
+ratingRouter.get('/profile/:profile', ratingController.getProfilesRatings);
+
 
 //UPDATE ----------------------------------------------------------
 
