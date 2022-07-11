@@ -14,6 +14,9 @@ albumRouter.get('/', albumController.getAllAlbums);
 
 albumRouter.get('/oneAlbum/:albumId', albumController.getOneAlbum);
 
+albumRouter.get('/allAlbumsTitle/:albumTitle', albumController.getAllAlbumsbyTitle);
+
+
 albumRouter.get('/:profile', albumController.getProfilesAlbums);
 
 

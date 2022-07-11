@@ -1,0 +1,50 @@
+
+  //const axios = require('../services/backendApi.js')
+  const axios = require('axios')
+
+  // find one Album by their title
+const getDeezerArtist = async (req, res) => {
+    try {
+        axios.get(`https://api.deezer.com/search/artist/?q=artist:"${req.params.search}"`).then(resp => {
+            console.log("Getting Deezer data");
+            console.log(resp.data);
+            return res.send(resp.data)
+        })
+    } catch (err) {
+        res.status(404)
+        return res.send("Deezer query failed")
+    }
+}
+
+const getDeezerAlbumbyId = async (req, res) => {
+    try {
+        axios.get(`https://api.deezer.com/album/${req.params.albumId}`).then(resp => {
+            console.log("Getting Deezer data");
+            //console.log(resp.data);
+            return res.send(resp.data)
+        })
+    } catch (err) {
+        res.status(404)
+        return res.send("Deezer query failed")
+    }
+}
+
+const getDeezerAlbum = async (req, res) => {
+    try {
+        axios.get(`https://api.deezer.com/search/album/?q=album:"${req.params.search}"`).then(resp => {
+            console.log("Getting Deezer data");
+            //console.log(resp.data);
+            return res.send(resp.data)
+        })
+    } catch (err) {
+        res.status(404)
+        return res.send("Deezer query failed")
+    }
+}
+
+
+module.exports = {
+    getDeezerArtist,
+    getDeezerAlbumbyId,
+    getDeezerAlbum
+}

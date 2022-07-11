@@ -30,6 +30,19 @@ const getOneAlbum = async (req, res) => {
     }
 }
 
+  // find one Album by their title
+const getAllAlbumsbyTitle = async (req, res) => {
+    try {
+        const albums = await Album.find( {"title": req.params.albumTitle} )
+        console.log("Getting all albums by title");
+        return res.send(albums)
+    } catch (err) {
+        res.status(404)
+        console.log("failed " + req.params.profile);
+        return res.send("Database query failed")
+    }
+}
+
 const getProfilesAlbums = async (req, res) => {
     try {
         const albums = await Album.find( {"profile": req.params.profile } )
@@ -112,5 +125,6 @@ module.exports = {
     getOneAlbum,
     addAlbum,
     getProfilesAlbums,
-    updateAlbum
+    updateAlbum,
+    getAllAlbumsbyTitle
 }
