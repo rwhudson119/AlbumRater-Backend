@@ -1,0 +1,20 @@
+const express = require('express')
+
+// add Comment router 
+const deezerRouter = express.Router()
+const deezerController = require('../Controllers/deezerControllers')
+
+
+//READ ------------------------------------------------------------
+
+deezerRouter.get('/artist/:search', deezerController.getDeezerArtist);
+
+deezerRouter.get('/albumid/:albumId', deezerController.getDeezerAlbumbyId);
+
+deezerRouter.get('/:search', deezerController.getDeezerAlbum);
+
+
+
+// export the router
+module.exports = deezerRouter
+
