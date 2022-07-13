@@ -1,3 +1,4 @@
 
-AlbumRater-Backend/.env
+.env
 AlbumRater-Backend/node_modules
+node_modules
