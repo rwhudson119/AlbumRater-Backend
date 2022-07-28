@@ -1,7 +1,0 @@
-const mongoose = require("mongoose")
-
-const deezerSchema = new mongoose.Schema({})
-
-const Deezer = mongoose.model("Deezer", deezerSchema)
-
-module.exports = Deezer
