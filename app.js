@@ -25,7 +25,7 @@ app.use('/song', songRouter);
 
 
 app.get('/', (req, res) =>{
-	res.send('<h1>Website</h1>');
+	res.send('<h1>Album Rater Backend</h1>');
 })
 
 app.listen(process.env.PORT || 4000, ()=> {
