@@ -15,7 +15,7 @@ const getAllProfiles = async (req, res) => {
 // find one Profile by their id
 const getOneProfile = async (req, res) => {
     try {
-        const oneProfile = await Profile.findOne( {"profileId": req.params.id})
+        const oneProfile = await Profile.findOne( {"_id": req.params.profileId})
         if (oneProfile === null) { 
             // no Profile found in database
             res.status(404)
