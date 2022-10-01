@@ -31,7 +31,7 @@ const getProfilesSongs = async (req, res) => {
    // find one Song by their id
 const getOneSong = async (req, res) => {
     try {
-        const oneSong = await Song.findOne( {"_id": req.params.songId})
+        const oneSong = await Song.findOne( {"id": req.params.songId})
         if (oneSong === null) { 
         // no Song found in database
         res.status(404)
