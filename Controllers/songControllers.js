@@ -78,6 +78,8 @@ const updateSong = async (req, res) => {
        const artist = req.body.artist
        const score = req.body.score
        const profile = req.body.profile
+       const duration = req.body.duration
+       const bpm = req.body.bpm
 
        
    
@@ -87,6 +89,8 @@ const updateSong = async (req, res) => {
         artist,
         score,
         profile,
+        duration,
+        bpm,
        });
    
        newSong.save()
@@ -94,7 +98,6 @@ const updateSong = async (req, res) => {
            .catch (err => res.status(400).json(`Error: ${err}`));
    }
    
-
 // exporting the functions
 module.exports = {
     getAllSongs,

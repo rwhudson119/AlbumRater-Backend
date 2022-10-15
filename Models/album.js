@@ -14,6 +14,9 @@ const albumSchema = new mongoose.Schema({
         type: String,
 		required: true,
 	},
+	country: {
+        type: String,
+	},
     genre: {
         type: String,
 	},
@@ -22,6 +25,9 @@ const albumSchema = new mongoose.Schema({
 	},
     cover_photo: {
         type: String,
+	},
+	artwork: {
+        type: Number,
 	},
     originality: {
         type: Number,
@@ -36,6 +42,15 @@ const albumSchema = new mongoose.Schema({
         type: Number,
 	},
     timelessness: {
+        type: Number,
+	},
+	delivery: {
+        type: Number,
+	},
+	music: {
+        type: Number,
+	},
+	expectation: {
         type: Number,
 	},
 	notes: {

@@ -61,13 +61,17 @@ const updateAlbum = async (req, res) => {
        const update = {
             title: req.body.title,
             artist: req.body.artist,
+            country: req.body.country,
             genre: req.body.genre,
             release_date: req.body.release_date,
+            artwork: req.body.artwork,
             originality: req.body.originality,
             flow: req.body.flow,
             lyrics: req.body.lyrics,
             how_captivating: req.body.how_captivating,
             timelessness: req.body.timelessness,
+            music: req.body.music,
+            delivery: req.body.delivery,
             ratings: req.body.ratings,
             notes: req.body.notes
        }
@@ -86,14 +90,18 @@ const addAlbum = (req, res) => {
     const title = req.body.title
     const profile = req.body.profile
     const artist = req.body.artist
+    const country = req.body.country
     const genre = req.body.genre
     const release_date = req.body.release_date
     const cover_photo = req.body.cover_photo
+    const artwork = req.body.artwork
     const originality = req.body.originality
     const flow = req.body.flow
     const lyrics = req.body.lyrics
     const how_captivating = req.body.how_captivating
     const timelessness = req.body.timelessness
+    const music = req.body.music
+    const delivery = req.body.delivery
     const notes = req.body.notes
     const ratings = req.body.ratings
     const songs = req.body.songs
@@ -102,14 +110,18 @@ const addAlbum = (req, res) => {
     title,
     profile,
     artist,
+    country,
     genre,
     release_date,
     cover_photo,
+    artwork,
     originality,
     flow,
     lyrics,
     how_captivating,
     timelessness,
+    music,
+    delivery,
     notes,
     ratings,
     songs,

@@ -34,12 +34,14 @@ const addProfile = (req, res) => {
     const username = req.body.username
     const password = req.body.password
     const darkmode = req.body.darkmode
+    const colour = req.body.colour
     
 
     const newProfile = new Profile({
     username,
     password,
     darkmode,
+    colour,
     });
 
     newProfile.save()

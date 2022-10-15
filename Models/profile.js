@@ -13,6 +13,9 @@ const profileSchema = new mongoose.Schema({
         type: String,
         enum: ['yes','no'],
 		default: 'no'
+	},
+	colour: {
+        type: String,
 	}
 })
 

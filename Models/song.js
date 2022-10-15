@@ -16,6 +16,12 @@ const songSchema = new mongoose.Schema({
 	score: {
         type: Number,
 	},
+	duration: {
+        type: Number,
+	},
+	bpm: {                                 
+        type: Number,
+	},
 	profile: {
 		type: String,
 	}
