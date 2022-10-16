@@ -65,6 +65,7 @@ const updateAlbum = async (req, res) => {
             genre: req.body.genre,
             release_date: req.body.release_date,
             artwork: req.body.artwork,
+            expectation: req.body.expectation,
             originality: req.body.originality,
             flow: req.body.flow,
             lyrics: req.body.lyrics,
@@ -95,6 +96,7 @@ const addAlbum = (req, res) => {
     const release_date = req.body.release_date
     const cover_photo = req.body.cover_photo
     const artwork = req.body.artwork
+    const expectation = req.body.expectation
     const originality = req.body.originality
     const flow = req.body.flow
     const lyrics = req.body.lyrics
@@ -115,6 +117,7 @@ const addAlbum = (req, res) => {
     release_date,
     cover_photo,
     artwork,
+    expectation,
     originality,
     flow,
     lyrics,
