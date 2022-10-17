@@ -29,6 +29,14 @@ const albumSchema = new mongoose.Schema({
 	artwork: {
         type: Number,
 	},
+	expectation: {
+        type: Number,
+	},
+	in_queue: {
+        type: String,
+        enum: ['yes','no'],
+		required: true,
+	},
     originality: {
         type: Number,
 	},
@@ -48,9 +56,6 @@ const albumSchema = new mongoose.Schema({
         type: Number,
 	},
 	music: {
-        type: Number,
-	},
-	expectation: {
         type: Number,
 	},
 	notes: {
